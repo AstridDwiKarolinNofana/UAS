@@ -12,9 +12,6 @@ public Astrid07221_AbstractRentalCamera(String id,String nama, //konstruktor,par
     this.noIdentitas=noIdentitas;
     this.notelp=notelp;
 }
- public Astrid07221_AbstractRentalCamera (){ 
-    }  
- 
     public String getId() {
         return id;
     }
