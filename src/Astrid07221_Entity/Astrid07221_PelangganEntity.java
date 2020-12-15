@@ -1,6 +1,6 @@
 package Astrid07221_Entity;
 import java.util.Date;
-public class Astrid07221_PelangganEntity extends Astrid07221_Inheritence {  //menerapkan inheritence/pewarisan, dimana petugas mewarisi data abstract, subclass
+public class Astrid07221_PelangganEntity extends Astrid07221_Rentalcamera {  //menerapkan inheritence/pewarisan, dimana petugas mewarisi data abstract, subclass
                                                         //superclass
     protected Date tgl_sewa,tgl_kembali; //atribut
     public Astrid07221_PelangganEntity(String id,String nama,
