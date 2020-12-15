@@ -1,4 +1,4 @@
-package Astrid07221_RentalCamera;
+package Astrid07221_Main;
 import Astrid07221_Entity.Astrid07221_PetugasEntity;
 import Astrid07221_Entity.Astrid07221_PelangganEntity;
 import Astrid07221_Entity.Astrid07221_DaftarPelangganEntity;
