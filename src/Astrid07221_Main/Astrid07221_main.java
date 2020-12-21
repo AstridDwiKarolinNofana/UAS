@@ -87,7 +87,7 @@ public class Astrid07221_main {
         String notelp =  input.next();
         System.out.print("Input Tgl sewa (dd/mm/yyyy) = ");
         Date Tgl_sewa = new Date(input.next());
-        System.out.print("Input Tgl sewa (dd/mm/yyyy) = ");
+        System.out.print("Input Tgl kembali (dd/mm/yyyy) = ");
         Date Tgl_kembali = new Date(input.next());
         pelangganModel.insert(new Astrid07221_PelangganEntity(id,nama,alamat,noIdentitas,notelp,
         Tgl_sewa,Tgl_kembali));
