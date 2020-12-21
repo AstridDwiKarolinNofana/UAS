@@ -1,5 +1,5 @@
 package Astrid07221_Model;
-public interface Astrid07221_ModeIinterfaces { //hanya mengandung deklarasi method
+public interface Astrid07221_ModeIinterfaces { 
  public void view();
     public int cekData (String id, String nama);   
 }

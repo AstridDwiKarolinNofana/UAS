@@ -1,11 +1,10 @@
-
 package Astrid07221_Entity;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 public class Astrid07221_Rentalcamera {
 protected String id,nama,alamat,noIdentitas,notelp;
     
-public Astrid07221_Rentalcamera(String id,String nama, //konstruktor,parameter
+public Astrid07221_Rentalcamera(String id,String nama,
     String alamat, String noIdentitas,String notelp){
     this.id=id;
     this.nama=nama;

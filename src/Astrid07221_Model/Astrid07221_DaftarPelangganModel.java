@@ -1,11 +1,11 @@
-package Astrid07221_Model; //
-import Astrid07221_Entity.Astrid07221_DaftarPelangganEntity; //mengaksees
+package Astrid07221_Model; 
+import Astrid07221_Entity.Astrid07221_DaftarPelangganEntity;
 import Astrid07221_Entity.Astrid07221_CameraEntity;
 import Astrid07221_Entity.Astrid07221_PetugasEntity;
 import java.text.ParseException;
-import java.text.SimpleDateFormat; //tanggal
-import java.util.ArrayList; //objek arraylist
-public class Astrid07221_DaftarPelangganModel implements Astrid07221_ModeIinterfaces { //inhiritence mewariskan interface=hanya mengandung deklarasi method 
+import java.text.SimpleDateFormat; 
+import java.util.ArrayList; 
+public class Astrid07221_DaftarPelangganModel implements Astrid07221_ModeIinterfaces { 
     private ArrayList<Astrid07221_DaftarPelangganEntity> daftarpelangganArrayList;
     public Astrid07221_DaftarPelangganModel(){
     daftarpelangganArrayList = new ArrayList<Astrid07221_DaftarPelangganEntity>();
@@ -16,8 +16,8 @@ public class Astrid07221_DaftarPelangganModel implements Astrid07221_ModeIinterf
     public ArrayList<Astrid07221_DaftarPelangganEntity> getdaftarpelangganArrayList(){
         return daftarpelangganArrayList;
     }
-    @Override //memanggil method dari class
-    public void view(){ //menampilkan data dari
+    @Override 
+    public void view(){ 
         for(Astrid07221_DaftarPelangganEntity daftarpelanggan : daftarpelangganArrayList){
         System.out.println("===========================================");
         System.out.print("ID : "+daftarpelanggan.getPelanggan().getId()+"\n Nama : "
@@ -56,5 +56,4 @@ public class Astrid07221_DaftarPelangganModel implements Astrid07221_ModeIinterf
     }
     public void updateIsVerified(int index,Astrid07221_DaftarPelangganEntity daftarpelanggan){
     daftarpelangganArrayList.set(index, daftarpelanggan);
-    }
-}
+    } }

@@ -4,7 +4,7 @@ import Astrid07221_Entity.Astrid07221_PelangganEntity;
 import Astrid07221_Model.Astrid07221_DaftarPelangganModel;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-public class Astrid07221_PelangganModel implements Astrid07221_ModeIinterfaces { //inhiritence mewariskan interface=hanya mengandung deklarasi method 
+public class Astrid07221_PelangganModel implements Astrid07221_ModeIinterfaces { 
     private ArrayList<Astrid07221_PelangganEntity> pelangganEntityArrayList;
      
      public Astrid07221_PelangganModel(){

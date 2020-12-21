@@ -10,18 +10,18 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner; 
 public class Astrid07221_main {
-    private static Astrid07221_PetugasModel petugasModel = new Astrid07221_PetugasModel(); //encapsulatin, prosees pembungkusan data atribut dan method menjadi satu
+    private static Astrid07221_PetugasModel petugasModel = new Astrid07221_PetugasModel(); 
     private static Astrid07221_PelangganModel pelangganModel = new Astrid07221_PelangganModel();
     private static Astrid07221_DaftarPelangganModel daftarPelangganmodel = new Astrid07221_DaftarPelangganModel();
     private static Scanner input = new Scanner (System.in);
-    private static int pilCamera;
-    static int cekpelanggan;
-    static int cekPetugas;
+    int pilCamera;
+    int cekpelanggan;
+    int cekPetugas;
  
     
     public static void main(String[] args) { 
         Astrid07221_main data = new Astrid07221_main();
-        data.viewMenu(); //untuk mengurangi keyword static pada program, kita mendefinisikan ulang obyek rental camera menghubungkan pada method view menu
+        data.viewMenu(); 
     }
     
     void viewMenu(){
