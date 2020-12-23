@@ -85,7 +85,7 @@ public class Astrid07221_main {
         }
         int pilPrak = input.nextInt();
         pelangganModel.Astrid07221_DaftarPelangganEntity(pilPrak, pelangganModel.getData(), true);
-        petugasModel.listPendaftarPraktikum();
+        petugasModel.listCamera();
     }
         
         void loginPelanggan(){
@@ -109,7 +109,7 @@ public class Astrid07221_main {
         System.out.println("No telp = "+pelangganModel.showDaftarPelanggan(cekpelanggan).getPelanggan().getnotelp());
         System.out.println("camera = "+Astrid07221_CameraEntity.merk[pelangganModel.showDaftarPelanggan(cekpelanggan).getIndexCamera()]);
         System.out.println("Tgl sewa           : "+new SimpleDateFormat(" dd - MM - yyyy").format(pelangganModel.showDaftarPelanggan(cekpelanggan).getPelanggan().getTgl_sewa()));
-        System.out.println("Tgl sewa           : "+new SimpleDateFormat(" dd - MM - yyyy").format(pelangganModel.showDaftarPelanggan(cekpelanggan).getPelanggan().getTgl_kembali()));
+        System.out.println("Tgl kembali           : "+new SimpleDateFormat(" dd - MM - yyyy").format(pelangganModel.showDaftarPelanggan(cekpelanggan).getPelanggan().getTgl_kembali()));
         System.out.println("isVerified = "+pelangganModel.showDaftarPelanggan(cekpelanggan).isIsVerified());
         }
     }
@@ -121,21 +121,21 @@ public class Astrid07221_main {
         String nama = input.next();
         try {
             petugasModel.login(id, nama);
-            System.out.println("Selamat Datang " + petugasModel.Astrid07221_PetugasEntity().getnama() + " dari Lab "
+            System.out.println("Selamat Datang " + petugasModel.Astrid07221_PetugasEntity().getnama() + " Id "
                     + petugasModel.Astrid07221_PetugasEntity().getId());
             if (petugasModel.cekDaftarPelangganModel().size() == 0) {
                 System.out.println("Data Masih Kosong !!!");
             } else {
-                viewDaftarPrak();
+                viewCamera();
                 updateIsVerified();
             }
         } catch (Exception e) {
-            System.out.println("NPM atau Password Anda Salah !!!");
+            System.out.println("id atau nama Anda Salah !!!");
         }
     }
         
-        static void viewDaftarPrak() {
-        petugasModel.listPendaftarPraktikum();
+        static void viewCamera() {
+        petugasModel.listCamera();
     }
         
         static void updateIsVerified() {

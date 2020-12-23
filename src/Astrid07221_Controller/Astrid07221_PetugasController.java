@@ -30,7 +30,7 @@ public class Astrid07221_PetugasController implements Astrid07221_ControllerInte
         Astrid07221_AllObjectModel.petugasModel.view();
     }
     
-    public void listPendaftarPraktikum() {
+    public void listCamera() {
         Astrid07221_AllObjectModel.daftarPelangganmodel.view();
     }
     
