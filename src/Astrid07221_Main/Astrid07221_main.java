@@ -83,8 +83,8 @@ public class Astrid07221_main {
             System.out.println((i) + " " + Astrid07221_CameraEntity.merk[i]);
         }
         int pilPrak = input.nextInt();
-        pelangganModel.Astrid07221_DaftarPelangganEntity(pilPrak, pelangganModel.getData(), true);
-        petugasModel.listCamera();
+        pelangganModel.Astrid07221_DaftarCamera(pilPrak, pelangganModel.getData(), false);
+        petugasModel.listDaftarCamera();
     }
         
         void loginPelanggan(){
@@ -109,7 +109,12 @@ public class Astrid07221_main {
         System.out.println("camera = "+Astrid07221_CameraEntity.merk[pelangganModel.showDaftarPelanggan(cekpelanggan).getIndexCamera()]);
         System.out.println("Tgl sewa           : "+new SimpleDateFormat(" dd - MM - yyyy").format(pelangganModel.showDaftarPelanggan(cekpelanggan).getPelanggan().getTgl_sewa()));
         System.out.println("Tgl kembali           : "+new SimpleDateFormat(" dd - MM - yyyy").format(pelangganModel.showDaftarPelanggan(cekpelanggan).getPelanggan().getTgl_kembali()));
-        System.out.println("isVerified = "+pelangganModel.showDaftarPelanggan(cekpelanggan).isIsVerified());
+        System.out.println("isVerified = ");
+         if (pelangganModel.showDaftarPelanggan(cekpelanggan).isIsVerified() == false) {
+                System.out.print("Belum Di Verifikasi Admin");
+            } else {
+                System.out.print("Telah Di Verifikasi Admin");
+            }
         }
     }
         
@@ -133,15 +138,15 @@ public class Astrid07221_main {
         }
     }
         
-        static void viewCamera() {
-        petugasModel.listCamera();
+        void viewCamera() {
+        petugasModel.listDaftarCamera();
     }
         
-        static void updateIsVerified() {
+        void updateIsVerified() {
         System.out.println("id Pelanggan : ");
         String id = input.next();
         int index = Astrid07221_AllObjectModel.daftarPelangganmodel.cekData(id, null);
-        petugasModel.updateIsVerified(index, pelangganModel.showDaftarPelanggan(index));
+        petugasModel.updateIsVerified(index, pelangganModel.showDaftarPelanggan(index).getIndexCamera(),pelangganModel.showDaftarPelanggan(index).getPelanggan());
     }
         
 }

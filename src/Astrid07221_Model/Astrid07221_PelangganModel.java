@@ -13,6 +13,9 @@ public class Astrid07221_PelangganModel implements Astrid07221_ModeIinterfaces {
 public void insert(Astrid07221_PelangganEntity pelangganEntity){
     pelangganEntityArrayList.add(pelangganEntity);  
 }
+ public int size() {
+        return pelangganEntityArrayList.size();
+    }
  @Override
     public void view(){
         for(Astrid07221_PelangganEntity pelangganEntity : pelangganEntityArrayList){

@@ -11,7 +11,7 @@ public class Astrid07221_PelangganController implements Astrid07221_ControllerIn
         return Astrid07221_AllObjectModel.pelangganModel.getpelangganEntityArrayList(indexLogin);
     }
     
-    public void Astrid07221_DaftarPelangganEntity(int indexCamera,  Astrid07221_PelangganEntity pelanggan,
+    public void Astrid07221_DaftarCamera(int indexCamera,  Astrid07221_PelangganEntity pelanggan,
             boolean isVerified) {
         Astrid07221_AllObjectModel.daftarPelangganmodel.insertDataPelanggan(new 
         Astrid07221_DaftarPelangganEntity (indexCamera,pelanggan, isVerified));

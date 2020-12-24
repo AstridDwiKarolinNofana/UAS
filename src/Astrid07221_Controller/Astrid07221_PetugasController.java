@@ -26,7 +26,7 @@ public class Astrid07221_PetugasController implements Astrid07221_ControllerInte
         Astrid07221_AllObjectModel.petugasModel.view();
     }
     
-    public void listCamera() {
+    public void listDaftarCamera() {
         Astrid07221_AllObjectModel.daftarPelangganmodel.view();
     }
     
@@ -39,8 +39,8 @@ public class Astrid07221_PetugasController implements Astrid07221_ControllerInte
         return Astrid07221_AllObjectModel.petugasModel.showDataPetugas(indexLogin);
     }
     
-    public void updateIsVerified(int index,Astrid07221_DaftarPelangganEntity daftarpelanggan) {
-        Astrid07221_AllObjectModel.daftarPelangganmodel.updateIsVerified(index, daftarpelanggan);
+    public void updateIsVerified(int index,int indexCamera,Astrid07221_PelangganEntity pelanggan ) {
+        Astrid07221_AllObjectModel.daftarPelangganmodel.updateIsVerified(index, new Astrid07221_DaftarPelangganEntity(indexCamera, pelanggan,true));
     }
     
     public ArrayList<Astrid07221_DaftarPelangganEntity> cekDaftarPelangganModel() {
