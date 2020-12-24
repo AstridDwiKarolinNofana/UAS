@@ -1,6 +1,5 @@
 package Astrid07221_Main;
 import Astrid07221_Entity.Astrid07221_CameraEntity;
-import Astrid07221_Entity.Astrid07221_PelangganEntity;
 import Astrid07221_Controller.Astrid07221_PetugasController;
 import Astrid07221_Controller.Astrid07221_AllObjectModel;
 import Astrid07221_Controller.Astrid07221_PelangganController;

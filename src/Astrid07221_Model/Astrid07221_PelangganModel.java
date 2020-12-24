@@ -16,15 +16,6 @@ public void insert(Astrid07221_PelangganEntity pelangganEntity){
  @Override
     public void view(){
         for(Astrid07221_PelangganEntity pelangganEntity : pelangganEntityArrayList){
-            System.out.println("===========================================");
-            System.out.println(" ID : "+pelangganEntity.getId()+"\n Nama : "
-            +pelangganEntity.getnama()+"\n Alamat : "+pelangganEntity.getalamat()+
-            "\n No Identitas: "+pelangganEntity.getnoIdentitas()+"\n No Telepon : "
-            +pelangganEntity.getnotelp()
-            +"\n tgl sewa : " +new SimpleDateFormat(" dd - MM - yyyy").format(pelangganEntity.getTgl_sewa())       
-            +"\n tgl Kembali : " +new SimpleDateFormat(" dd - MM - yyyy").format(pelangganEntity.getTgl_kembali()));
-                      
-            System.out.println("===========================================");
         }
     }
     public int cekData(String id, String nama){

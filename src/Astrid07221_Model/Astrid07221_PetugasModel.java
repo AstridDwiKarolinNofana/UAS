@@ -12,12 +12,6 @@ public class Astrid07221_PetugasModel implements Astrid07221_ModeIinterfaces{
      @Override   
       public void view(){
         for (Astrid07221_PetugasEntity PetugasEntity : PetugasEntityArrayList){
-        System.out.print(PetugasEntity.getId());
-        System.out.print(PetugasEntity.getnama());
-        System.out.print(PetugasEntity.getalamat());
-        System.out.print(PetugasEntity.getnoIdentitas());
-        System.out.print(PetugasEntity.getnotelp());
-        System.out.println();
         }
     } 
     public int cekData(String id, String nama){
