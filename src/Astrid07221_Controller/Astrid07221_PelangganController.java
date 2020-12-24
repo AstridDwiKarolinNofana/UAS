@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Astrid07221_Controller;
 import Astrid07221_Entity.Astrid07221_DaftarPelangganEntity;
 import Astrid07221_Entity.Astrid07221_PelangganEntity;
@@ -16,8 +11,10 @@ public class Astrid07221_PelangganController implements Astrid07221_ControllerIn
         return Astrid07221_AllObjectModel.pelangganModel.getpelangganEntityArrayList(indexLogin);
     }
     
-    public void Astrid07221_DaftarPelangganEntity(int indexCamera,  Astrid07221_PelangganEntity pelanggan, boolean isVerified) {
-        Astrid07221_AllObjectModel.daftarPelangganmodel.insertDataPelanggan(new Astrid07221_DaftarPelangganEntity (indexCamera,pelanggan, isVerified));
+    public void Astrid07221_DaftarPelangganEntity(int indexCamera,  Astrid07221_PelangganEntity pelanggan,
+            boolean isVerified) {
+        Astrid07221_AllObjectModel.daftarPelangganmodel.insertDataPelanggan(new 
+        Astrid07221_DaftarPelangganEntity (indexCamera,pelanggan, isVerified));
     }
     
     @Override
@@ -27,7 +24,8 @@ public class Astrid07221_PelangganController implements Astrid07221_ControllerIn
     
     public void insert(String id,String nama,
     String alamat, String noIdentitas,String notelp,Date tgl_sewa,Date tgl_kembali) {
-        Astrid07221_AllObjectModel.pelangganModel.insert(new Astrid07221_PelangganEntity(id,nama,alamat,noIdentitas,notelp,tgl_sewa,tgl_kembali));
+        Astrid07221_AllObjectModel.pelangganModel.insert(new Astrid07221_PelangganEntity
+        (id,nama,alamat,noIdentitas,notelp,tgl_sewa,tgl_kembali));
     }
     
     public Astrid07221_PelangganEntity pelangganEntity() {

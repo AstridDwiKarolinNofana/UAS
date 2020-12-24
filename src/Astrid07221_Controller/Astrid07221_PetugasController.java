@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Astrid07221_Controller;
 import Astrid07221_Entity.Astrid07221_PetugasEntity;
 import Astrid07221_Entity.Astrid07221_DaftarPelangganEntity;
@@ -21,7 +16,8 @@ public class Astrid07221_PetugasController implements Astrid07221_ControllerInte
         String noIdentitas [] = {"01","02","03"};
         String notelp [] = {"01","02","03"};
               for(int i=0;i<id.length;i++){
-                Astrid07221_AllObjectModel.petugasModel.insertPetugas(new Astrid07221_PetugasEntity(id[i],nama[i],alamat[i],
+                Astrid07221_AllObjectModel.petugasModel.insertPetugas(new 
+                Astrid07221_PetugasEntity(id[i],nama[i],alamat[i],
                 noIdentitas[i],notelp[i]));
             }
     }
