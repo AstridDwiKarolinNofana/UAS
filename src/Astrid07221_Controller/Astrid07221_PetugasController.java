@@ -22,14 +22,6 @@ public class Astrid07221_PetugasController implements Astrid07221_ControllerInte
             }
     }
     
-    public void view() {
-        Astrid07221_AllObjectModel.petugasModel.view();
-    }
-    
-    public void listDaftarCamera() {
-        Astrid07221_AllObjectModel.daftarPelangganmodel.view();
-    }
-    
     @Override
     public void login(String id, String nama) {
         indexLogin =  Astrid07221_AllObjectModel.petugasModel.cekData(id, nama);

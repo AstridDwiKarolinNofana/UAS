@@ -19,21 +19,6 @@ public class Astrid07221_DaftarPelangganModel implements Astrid07221_ModeIinterf
     @Override 
     public void view(){ 
         for(Astrid07221_DaftarPelangganEntity daftarpelanggan : daftarpelangganArrayList){
-        System.out.println("===========================================");
-        System.out.print("ID : "+daftarpelanggan.getPelanggan().getId()+"\n Nama : "
-        +daftarpelanggan.getPelanggan().getnama()+"\n Alamat "+daftarpelanggan.getPelanggan().getalamat()+
-        "\n No Identitas "+daftarpelanggan.getPelanggan().getnoIdentitas()+
-        "\n No Telepon "+daftarpelanggan.getPelanggan().getnotelp()+
-        "\n Camera: "+Astrid07221_CameraEntity.merk[daftarpelanggan.getIndexCamera()]+
-        "\n Tanggal Lahir : "+new SimpleDateFormat("dd-MM-yyyy").format(daftarpelanggan.getPelanggan().getTgl_sewa())+
-         "\n Tanggal Lahir : "+new SimpleDateFormat("dd-MM-yyyy").format(daftarpelanggan.getPelanggan().getTgl_kembali())+
-        "\n IsVerified : ");
-        if(daftarpelanggan.isIsVerified() == false){
-        System.out.println("Belum Di Verifikasi Petugas");
-        }else{
-        System.out.println("Telah Di Verifikasi");
-            }
-        System.out.println("===========================================");
         }
     }
     public int cekData(String id, String nama){
@@ -53,6 +38,9 @@ public class Astrid07221_DaftarPelangganModel implements Astrid07221_ModeIinterf
     }
     public Astrid07221_DaftarPelangganEntity showDaftarPelanggan(int index){
         return daftarpelangganArrayList.get(index);
+    }
+    public void hapusPelangganModel(int index) {
+        daftarpelangganArrayList.remove(daftarpelangganArrayList.get(index));
     }
     public void updateIsVerified(int index,Astrid07221_DaftarPelangganEntity daftarpelanggan){
     daftarpelangganArrayList.set(index, daftarpelanggan);

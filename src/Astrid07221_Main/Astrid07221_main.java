@@ -1,5 +1,7 @@
 package Astrid07221_Main;
 import Astrid07221_Entity.Astrid07221_CameraEntity;
+import Astrid07221_Entity.Astrid07221_DaftarPelangganEntity;
+import Astrid07221_Model.Astrid07221_DaftarPelangganModel;
 import Astrid07221_Controller.Astrid07221_PetugasController;
 import Astrid07221_Controller.Astrid07221_AllObjectModel;
 import Astrid07221_Controller.Astrid07221_PelangganController;
@@ -8,11 +10,12 @@ import java.util.Date;
 import java.util.Scanner; 
 
 public class Astrid07221_main {
+    
     private static Astrid07221_PetugasController petugasModel = new Astrid07221_PetugasController(); 
     private static Astrid07221_PelangganController pelangganModel = new Astrid07221_PelangganController();
     private static Scanner input = new Scanner (System.in);
 
-    public static void main(String[] args) { 
+    public static void main(String[] args){ 
         Astrid07221_main data = new Astrid07221_main();
         data.viewMenu(); 
     }
@@ -26,8 +29,8 @@ public class Astrid07221_main {
            System.out.print("Selamat Datang Di RENTAL CAMERA !!" +
                             "\n 1. Login" +
                             "\n 2. Daftar Pelanggan" +
-                            "\n 3. Lihat Data Petugas" +
-                            "\n 4. Lihat Data Camera" +
+                            "\n 3. Hapus Pelanggan"+
+                            "\n 4. Lihat Pelanggan"+
                             "\n 0. Stop" +
                             "\n Masukkan Pilihan Anda : ");
                         pilih = input.nextInt();
@@ -42,36 +45,37 @@ public class Astrid07221_main {
             }else if(pilih == 2){
                 register();
             }else if(pilih == 3){
-                petugasModel.view();
-            }else if (pilih == 4){
-               for(int i=0;i<Astrid07221_CameraEntity.merk.length;i++){
-                    System.out.println(i+". "+Astrid07221_CameraEntity.merk[i]);
-               }
+                viewHapusDataPelanggan();
+            }else if(pilih == 4){
+                if (petugasModel.cekDaftarPelangganModel().size() == 0) {
+                System.out.println("Data Masih Kosong !!!");
+                } else{
+                viewDataPelanggan();
+                }
             }else{
                 break;
             }
         }while (loop != 1);
     }
-
-        
+     
         void register(){
             try{
-        System.out.print("Input ID = ");
-        String id = input.next();
-        System.out.print("Input nama = ");
-        String nama = input.next();
-        System.out.print("Input Alamat = ");
-        String alamat = input.next();
-        System.out.print("Input no Identitas = ");
-        String noIdentitas =  input.next();
-        System.out.print("Input no Telepon = ");
-        String notelp =  input.next();
-        System.out.print("Input Tgl sewa (dd/mm/yyyy) = ");
-        Date Tgl_sewa = new Date(input.next());
-        System.out.print("Input Tgl kembali (dd/mm/yyyy) = ");
-        Date Tgl_kembali = new Date(input.next());
-        pelangganModel.insert(id,nama,alamat,noIdentitas,notelp,Tgl_sewa,Tgl_kembali);
-        System.out.println("Daftar Sukses !!");
+                System.out.print("Input ID = ");
+                String id = input.next();
+                System.out.print("Input nama = ");
+                String nama = input.next();
+                System.out.print("Input Alamat = ");
+                String alamat = input.next();
+                System.out.print("Input no Identitas = ");
+                String noIdentitas =  input.next();
+                System.out.print("Input no Telepon = ");
+                String notelp =  input.next();
+                System.out.print("Input Tgl sewa (dd/mm/yyyy) = ");
+                Date Tgl_sewa = new Date(input.next());
+                System.out.print("Input Tgl kembali (dd/mm/yyyy) = ");
+                Date Tgl_kembali = new Date(input.next());
+                pelangganModel.insert(id,nama,alamat,noIdentitas,notelp,Tgl_sewa,Tgl_kembali);
+                System.out.println("Daftar Sukses !!");
         }catch (Exception e) {
             System.out.println("Format Pengisian Salah");
         }
@@ -84,7 +88,30 @@ public class Astrid07221_main {
         }
         int pilPrak = input.nextInt();
         pelangganModel.Astrid07221_DaftarCamera(pilPrak, pelangganModel.getData(), false);
-        petugasModel.listDaftarCamera();
+        
+    }
+        
+        void viewDataPelanggan() {
+        int i=0;
+        for (Astrid07221_DaftarPelangganEntity pelanggan : pelangganModel.cekDaftarPelangganModel()) {
+                System.out.println("Data Ke - : "+i);
+                System.out.println(". Id : " + pelangganModel.showDaftarPelanggan(i).getPelanggan().getId());
+                System.out.println("Nama = "+pelangganModel.showDaftarPelanggan(i).getPelanggan().getnama());
+                System.out.println("No identitas = "+pelangganModel.showDaftarPelanggan(i).getPelanggan().getnoIdentitas());
+                System.out.println("No telp = "+pelangganModel.showDaftarPelanggan(i).getPelanggan().getnotelp());
+                System.out.println("camera = "+Astrid07221_CameraEntity.merk[pelangganModel.showDaftarPelanggan(i).getIndexCamera()]);
+                System.out.println("Tgl sewa           : "+new SimpleDateFormat(" dd - MM - yyyy").format(pelangganModel.showDaftarPelanggan(i).getPelanggan().getTgl_sewa()));
+                System.out.println("Tgl kembali           : "+new SimpleDateFormat(" dd - MM - yyyy").format(pelangganModel.showDaftarPelanggan(i).getPelanggan().getTgl_kembali()));
+                System.out.println("isVerified = ");
+                if (pelangganModel.showDaftarPelanggan(i).isIsVerified() == false) {
+                    System.out.print("Belum Di Verifikasi petugas\n");
+                    System.out.print("===========================\n");
+                } else {
+                    System.out.print("Telah Di Verifikasi petugas\n");
+                    System.out.print("===========================\n");
+                }         
+            i++;
+        }
     }
         
         void loginPelanggan(){
@@ -111,9 +138,9 @@ public class Astrid07221_main {
         System.out.println("Tgl kembali           : "+new SimpleDateFormat(" dd - MM - yyyy").format(pelangganModel.showDaftarPelanggan(cekpelanggan).getPelanggan().getTgl_kembali()));
         System.out.println("isVerified = ");
          if (pelangganModel.showDaftarPelanggan(cekpelanggan).isIsVerified() == false) {
-                System.out.print("Belum Di Verifikasi Admin");
+                System.out.print("Belum Di Verifikasi petugas\n");
             } else {
-                System.out.print("Telah Di Verifikasi Admin");
+                System.out.print("Telah Di Verifikasi petugas\n");
             }
         }
     }
@@ -129,24 +156,28 @@ public class Astrid07221_main {
                     + petugasModel.Astrid07221_PetugasEntity().getId());
             if (petugasModel.cekDaftarPelangganModel().size() == 0) {
                 System.out.println("Data Masih Kosong !!!");
-            } else {
-                viewCamera();
+            } else{
+                viewDataPelanggan();
                 updateIsVerified();
             }
         } catch (Exception e) {
             System.out.println("id atau nama Anda Salah !!!");
         }
     }
-        
-        void viewCamera() {
-        petugasModel.listDaftarCamera();
-    }
-        
+         
         void updateIsVerified() {
         System.out.println("id Pelanggan : ");
         String id = input.next();
+        System.out.println("=======================");
         int index = Astrid07221_AllObjectModel.daftarPelangganmodel.cekData(id, null);
         petugasModel.updateIsVerified(index, pelangganModel.showDaftarPelanggan(index).getIndexCamera(),pelangganModel.showDaftarPelanggan(index).getPelanggan());
     }
         
+        void viewHapusDataPelanggan() {
+        viewDataPelanggan();
+        System.out.print("Pilih Data Ke - : ");
+        int index = input.nextInt();
+        pelangganModel.deleteDataPelanggan(index);
+        System.out.println("Data Berhasil Dihapus");
+    }   
 }

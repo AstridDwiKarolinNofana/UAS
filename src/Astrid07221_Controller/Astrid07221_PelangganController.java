@@ -1,9 +1,12 @@
 package Astrid07221_Controller;
 import Astrid07221_Entity.Astrid07221_DaftarPelangganEntity;
 import Astrid07221_Entity.Astrid07221_PelangganEntity;
+import Astrid07221_Model.Astrid07221_PelangganModel;
+import java.util.ArrayList;
 import java.util.Date;
 public class Astrid07221_PelangganController implements Astrid07221_ControllerInterface{
     int indexLogin = 0;
+    
     public Astrid07221_PelangganController() {
     }
     
@@ -27,6 +30,9 @@ public class Astrid07221_PelangganController implements Astrid07221_ControllerIn
         Astrid07221_AllObjectModel.pelangganModel.insert(new Astrid07221_PelangganEntity
         (id,nama,alamat,noIdentitas,notelp,tgl_sewa,tgl_kembali));
     }
+    public void deleteDataMahasiswa(int index) {
+        Astrid07221_AllObjectModel.pelangganModel.hapusPelangganModel(index);
+    }
     
     public Astrid07221_PelangganEntity pelangganEntity() {
         return Astrid07221_AllObjectModel.pelangganModel.getpelangganEntityArrayList(indexLogin);
@@ -39,5 +45,11 @@ public class Astrid07221_PelangganController implements Astrid07221_ControllerIn
     
     public Astrid07221_DaftarPelangganEntity showDaftarPelanggan(int index) {
         return Astrid07221_AllObjectModel.daftarPelangganmodel.showDaftarPelanggan(index);
+    }
+    public void deleteDataPelanggan(int index) {
+        Astrid07221_AllObjectModel.daftarPelangganmodel.hapusPelangganModel(index);
+    }
+    public ArrayList<Astrid07221_DaftarPelangganEntity> cekDaftarPelangganModel() {
+        return Astrid07221_AllObjectModel.daftarPelangganmodel.getdaftarpelangganArrayList();
     }
 }
