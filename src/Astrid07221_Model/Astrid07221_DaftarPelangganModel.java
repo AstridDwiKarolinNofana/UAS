@@ -17,10 +17,6 @@ public class Astrid07221_DaftarPelangganModel implements Astrid07221_ModeIinterf
         return daftarpelangganArrayList;
     }
     @Override 
-    public void view(){ 
-        for(Astrid07221_DaftarPelangganEntity daftarpelanggan : daftarpelangganArrayList){
-        }
-    }
     public int cekData(String id, String nama){
         int loop = 0;
         if(daftarpelangganArrayList.size() ==0){

@@ -10,10 +10,6 @@ public class Astrid07221_PetugasModel implements Astrid07221_ModeIinterfaces{
         PetugasEntityArrayList.add(petugas);
     }
      @Override   
-      public void view(){
-        for (Astrid07221_PetugasEntity PetugasEntity : PetugasEntityArrayList){
-        }
-    } 
     public int cekData(String id, String nama){
         int loop = 0;
         for(Astrid07221_PetugasEntity petugasEntity : PetugasEntityArrayList){

@@ -20,10 +20,6 @@ public void hapusPelangganModel(int index) {
         return pelangganEntityArrayList.size();
     }
  @Override
-    public void view(){
-        for(Astrid07221_PelangganEntity pelangganEntity : pelangganEntityArrayList){
-        }
-    }
     public int cekData(String id, String nama){
         int loop = 0;
         while (!pelangganEntityArrayList.get(loop).getId().equals(id) && 
