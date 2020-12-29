@@ -10,10 +10,10 @@ public class Astrid07221_PelangganModel implements Astrid07221_ModeIinterfaces {
      public Astrid07221_PelangganModel(){
         pelangganEntityArrayList = new ArrayList<Astrid07221_PelangganEntity>();
     }
-public void insert(Astrid07221_PelangganEntity pelangganEntity){
+public void insert(Astrid07221_PelangganEntity pelangganEntity){ //menambah data pelanggan
     pelangganEntityArrayList.add(pelangganEntity);  
 }
-public void hapusPelangganModel(int index) {
+public void hapusPelangganModel(int index) { //hapus data pelanggan 
         pelangganEntityArrayList.remove(pelangganEntityArrayList.get(index));
     }
  public int size() {
@@ -28,7 +28,7 @@ public void hapusPelangganModel(int index) {
         }
         return loop;
     }
-    public Astrid07221_PelangganEntity getpelangganEntityArrayList(int index){
+    public Astrid07221_PelangganEntity getpelangganEntityArrayList(int index){ //
         return pelangganEntityArrayList.get(index);
     }
 }

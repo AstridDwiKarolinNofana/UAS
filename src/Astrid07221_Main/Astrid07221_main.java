@@ -59,7 +59,6 @@ public class Astrid07221_main {
     }
      
         void register(){
-            try{
                 System.out.print("Input ID = ");
                 String id = input.next();
                 System.out.print("Input nama = ");
@@ -76,9 +75,6 @@ public class Astrid07221_main {
                 Date Tgl_kembali = new Date(input.next());
                 pelangganModel.insert(id,nama,alamat,noIdentitas,notelp,Tgl_sewa,Tgl_kembali);
                 System.out.println("Daftar Sukses !!");
-        }catch (Exception e) {
-            System.out.println("Format Pengisian Salah");
-        }
         }
         
         static void registerPelanggan() {
@@ -95,7 +91,7 @@ public class Astrid07221_main {
         int i=0;
         for (Astrid07221_DaftarPelangganEntity pelanggan : pelangganModel.cekDaftarPelangganModel()) {
                 System.out.println("Data Ke - : "+i);
-                System.out.println(". Id : " + pelangganModel.showDaftarPelanggan(i).getPelanggan().getId());
+                System.out.println("Id : " + pelangganModel.showDaftarPelanggan(i).getPelanggan().getId());
                 System.out.println("Nama = "+pelangganModel.showDaftarPelanggan(i).getPelanggan().getnama());
                 System.out.println("No identitas = "+pelangganModel.showDaftarPelanggan(i).getPelanggan().getnoIdentitas());
                 System.out.println("No telp = "+pelangganModel.showDaftarPelanggan(i).getPelanggan().getnotelp());
@@ -119,9 +115,10 @@ public class Astrid07221_main {
         String id = input.next();
         System.out.print("Nama : ");
         String nama = input.next();
+        try {
         pelangganModel.login(id, nama);
-        System.out.println("Selamat datang "+pelangganModel.pelangganEntity().getnama());
-        int cekpelanggan = pelangganModel.cekDaftarPelanggan(pelangganModel.pelangganEntity().getId());
+        System.out.println("Selamat datang "+pelangganModel.getData().getnama());
+        int cekpelanggan = pelangganModel.cekDaftarPelanggan(pelangganModel.getData().getId());
         if (cekpelanggan == -1){
             System.out.println("Anda belum memilih kamera");
                 registerPelanggan();
@@ -142,6 +139,9 @@ public class Astrid07221_main {
             } else {
                 System.out.print("Telah Di Verifikasi petugas\n");
             }
+        
+        }} catch (Exception e) {
+            System.out.println("id atau nama Anda Salah !!!");
         }
     }
         

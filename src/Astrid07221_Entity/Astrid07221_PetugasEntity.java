@@ -5,7 +5,8 @@ public class Astrid07221_PetugasEntity extends Astrid07221_Rentalcamera{
     String alamat, String noIdentitas,String notelp){
         super(id,nama,alamat,noIdentitas,notelp); 
 }
- @Override   
+    
+ @Override 
     public String getId() {
         return id;
     }

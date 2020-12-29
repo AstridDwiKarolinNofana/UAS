@@ -27,15 +27,15 @@ public class Astrid07221_PelangganController implements Astrid07221_ControllerIn
     
     public void insert(String id,String nama,
     String alamat, String noIdentitas,String notelp,Date tgl_sewa,Date tgl_kembali) {
-        Astrid07221_AllObjectModel.pelangganModel.insert(new Astrid07221_PelangganEntity
-        (id,nama,alamat,noIdentitas,notelp,tgl_sewa,tgl_kembali));
-    }
-    public void deleteDataMahasiswa(int index) {
-        Astrid07221_AllObjectModel.pelangganModel.hapusPelangganModel(index);
-    }
-    
-    public Astrid07221_PelangganEntity pelangganEntity() {
-        return Astrid07221_AllObjectModel.pelangganModel.getpelangganEntityArrayList(indexLogin);
+        Astrid07221_PelangganEntity pelangganModel = new Astrid07221_PelangganEntity();
+        pelangganModel.setid(id);
+        pelangganModel.setnama(nama);
+        pelangganModel.setalamat(alamat);
+        pelangganModel.setnoIdentitas(noIdentitas);
+        pelangganModel.setnotelp(notelp);
+        pelangganModel.setTgl_sewa(tgl_sewa);
+        pelangganModel.setTgl_kembali(tgl_kembali);
+        Astrid07221_AllObjectModel.pelangganModel.insert(pelangganModel);
     }
     
     public int cekDaftarPelanggan(String id) {

@@ -12,6 +12,9 @@ public Astrid07221_Rentalcamera(String id,String nama,
     this.noIdentitas=noIdentitas;
     this.notelp=notelp;
 }
+    public Astrid07221_Rentalcamera(){
+    } 
+    
     public String getId() {
         return id;
     }
