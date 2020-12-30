@@ -10,7 +10,6 @@ import java.util.Date;
 import java.util.Scanner; 
 
 public class Astrid07221_main {
-    
     private static Astrid07221_PetugasController petugasModel = new Astrid07221_PetugasController(); 
     private static Astrid07221_PelangganController pelangganModel = new Astrid07221_PelangganController();
     private static Scanner input = new Scanner (System.in);
