@@ -19,7 +19,7 @@ public class Astrid07221_PetugasGUI {
      public Astrid07221_PetugasGUI(){
         petugas.setSize(650,500);
         petugas.setLayout(null);
-        petugas.getContentPane().setBackground(Color.PINK);
+        petugas.getContentPane().setBackground(Color.RED);
         
         admin = new JLabel("Admin");
         admin.setBounds(250, 30, 200, 30);
@@ -46,12 +46,12 @@ public class Astrid07221_PetugasGUI {
         
         verif = new JButton("verif");
         verif.setBounds(350, 350, 100, 30);
-        verif.setBackground(Color.GREEN);
+        verif.setBackground(Color.GRAY);
         petugas.add(verif);
         
         back = new JButton("back");
         back.setBounds(50, 400, 100, 30);
-        back.setBackground(Color.red);
+        back.setBackground(Color.GRAY);
         petugas.add(back);
         
         petugas.setLocationRelativeTo(null);
@@ -67,10 +67,10 @@ public class Astrid07221_PetugasGUI {
         
         verif.addActionListener(new ActionListener(){
             @Override
-            public void actionPerformed(ActionEvent ae){ //untuk verifikasi npm, dan password
+            public void actionPerformed(ActionEvent ae){ //untuk verifikasi id, dan nama
                 String id = idtext.getText();
                 String nama = namatext.getText();
-                int index = Astrid07221_AllObjectModel.daftarPelangganmodel.cekData(id, nama); //dicek
+                int index = Astrid07221_AllObjectModel.petugasModel.cekData(id, nama); //dicek
                 Astrid07221_Allobjctrl.admin.updateIsVerified(index, Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(index)
                         .getIndexCamera(),Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(index).getPelanggan());
                 tabelpelanggan.setModel(pelanggan.daftarpel());

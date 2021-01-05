@@ -9,7 +9,8 @@ public class Astrid07221_GUI {
     JFrame TampilanAwal = new JFrame();//tampilan awal
     JLabel login,daftar,top; 
     JRadioButton radioPetugas,radiopelanggan; //tombol pilihan
-    JTextField textidlogin,textnamalogin,textalamat,textnoidentitas,textnotelp,texttglsewa,texttglkembali,textiddaftar,textnamadaftar;
+    JTextField textidlogin,textnamalogin,textalamat,textnoidentitas,textnotelp,texttglsewa,
+                texttglkembali,textiddaftar,textnamadaftar;
     JLabel labelidlogin,labelnamalogin,labelalamat,labelnoidentitas,labelnotelp,labeltglsewa,
             labeltglkembali,labeliddaftar,labelnamadaftar;
     JButton check,reg; //tombol
@@ -149,7 +150,7 @@ public class Astrid07221_GUI {
                         Astrid07221_Allobjctrl.admin.login(textidlogin.getText(), textnamalogin.getText());
                         String nama = Astrid07221_Allobjctrl.admin.Astrid07221_PetugasEntity().getnama(); //memasukkan id,nama, jika benar 
                         JOptionPane.showMessageDialog(null, "Selamat datang "+nama,"information", JOptionPane.INFORMATION_MESSAGE);
-                        Astrid07221_GUI petugas = new Astrid07221_GUI();
+                        Astrid07221_PetugasGUI petugas = new Astrid07221_PetugasGUI();
                         TampilanAwal.dispose();
                     }catch(Exception exception){ //jika id/nama salah makan akan muncul pesan
                         JOptionPane.showMessageDialog(null, "id atau nama salah", "information", JOptionPane.INFORMATION_MESSAGE);
@@ -160,7 +161,7 @@ public class Astrid07221_GUI {
                        Astrid07221_Allobjctrl.Pelanggan.login(textidlogin.getText(),textnamalogin.getText());
                        String nama = Astrid07221_Allobjctrl.Pelanggan.getData().getnama(); //memasukkan id,nama, jika benar 
                        JOptionPane.showMessageDialog(null, "Selamat datang "+nama,"information", JOptionPane.INFORMATION_MESSAGE);
-                       Astrid07221_GUI  pel = new Astrid07221_GUI ();
+                       Astrid07221_PelangganGUI  pel = new Astrid07221_PelangganGUI();
                        TampilanAwal.dispose();
                     }catch(Exception eception){ //jika id/nama salah makan akan muncul pesan
                         JOptionPane.showMessageDialog(null, "id atau nama salah", "information", JOptionPane.INFORMATION_MESSAGE);
