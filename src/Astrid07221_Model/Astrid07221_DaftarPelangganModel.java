@@ -40,4 +40,8 @@ public class Astrid07221_DaftarPelangganModel implements Astrid07221_ModeIinterf
     }
     public void updateIsVerified(int index,Astrid07221_DaftarPelangganEntity daftarpelanggan){
     daftarpelangganArrayList.set(index, daftarpelanggan); 
-    } }
+    }
+    public ArrayList <Astrid07221_DaftarPelangganEntity> alldatapelanggan(){
+        return  daftarpelangganArrayList;
+    }
+}

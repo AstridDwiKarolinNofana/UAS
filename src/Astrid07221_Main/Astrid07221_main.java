@@ -8,6 +8,7 @@ import Astrid07221_Controller.Astrid07221_PelangganController;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner; 
+import Astrid07221_View.Astrid07221_GUI;
 
 public class Astrid07221_main {
     private static Astrid07221_PetugasController petugasModel = new Astrid07221_PetugasController(); 
@@ -16,7 +17,32 @@ public class Astrid07221_main {
 
     public static void main(String[] args){ 
         Astrid07221_main data = new Astrid07221_main();
-        data.viewMenu(); 
+        data.view(); 
+    }
+    void view(){
+    do {
+            int pilih;
+            System.out.println("Menu\n" +
+                    "1. Console\n" +
+                    "2. GUI\n" +
+                    "Masukkan Pilihan Anda : ");
+            pilih = input.nextInt();
+
+            switch (pilih){
+                case 1:
+                    viewMenu();
+                    break;
+                case 2:
+                    GUI();
+                    break;
+                default:
+                    break;
+            }
+        }while (true);
+    }
+    
+    void GUI(){
+        Astrid07221_GUI gui = new Astrid07221_GUI();
     }
     
     void viewMenu(){
@@ -30,7 +56,7 @@ public class Astrid07221_main {
                             "\n 2. Daftar Pelanggan" +
                             "\n 3. Hapus Pelanggan"+
                             "\n 4. Lihat Pelanggan"+
-                            "\n 0. Stop" +
+                            "\n 5. Close"+
                             "\n Masukkan Pilihan Anda : ");
                         pilih = input.nextInt();
                         if(pilih == 1){
@@ -51,6 +77,8 @@ public class Astrid07221_main {
                 } else{
                 viewDataPelanggan();
                 }
+            }else if(pilih == 5){
+                view();
             }else{
                 break;
             }
