@@ -38,7 +38,7 @@ public class Astrid07221_PelangganController implements Astrid07221_ControllerIn
         pelangganModel.setTgl_kembali(tgl_kembali);
         Astrid07221_AllObjectModel.pelangganModel.insert(pelangganModel);
     }
-    
+
     public int cekDaftarPelanggan(String id) {
         int cek = Astrid07221_AllObjectModel.daftarPelangganmodel.cekData(id, null);
         return cek;
@@ -55,7 +55,7 @@ public class Astrid07221_PelangganController implements Astrid07221_ControllerIn
     }
     public DefaultTableModel daftarpel(){
         DefaultTableModel dtmdaftarpel = new DefaultTableModel();
-        Object[] kolom ={"Id","Nama","Alamat","No Identitas","No Telp","Tgl Sewa","Tgl Kembali","Verified"};
+        Object[] kolom ={"Id","Nama","Alamat","No Identitas","No Telp","Tgl Sewa","Tgl Kembali","camera","Verified"};
         dtmdaftarpel.setColumnIdentifiers(kolom);
         int size = Astrid07221_AllObjectModel.daftarPelangganmodel.alldatapelanggan().size();
         String verif = null;
@@ -65,7 +65,7 @@ public class Astrid07221_PelangganController implements Astrid07221_ControllerIn
             }else{
                 verif = "yes";
             }
-            Object [] data = new Object[8];
+            Object [] data = new Object[9];
             data[0] = Astrid07221_AllObjectModel.daftarPelangganmodel.alldatapelanggan().get(i).getPelanggan().getId();
             data[1] = Astrid07221_AllObjectModel.daftarPelangganmodel.alldatapelanggan().get(i).getPelanggan().getnama();
             data[2] = Astrid07221_AllObjectModel.daftarPelangganmodel.alldatapelanggan().get(i).getPelanggan().getalamat();

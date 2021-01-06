@@ -13,7 +13,7 @@ public class Astrid07221_PelangganGUI {
     JLabel datadiri,daftarcamera;
     JComboBox pilcamera = new JComboBox(Astrid07221_CameraEntity.merk);
     int cek = Astrid07221_Allobjctrl.Pelanggan.cekDaftarPelanggan
-        (Astrid07221_Allobjctrl.Pelanggan.getData().getnama());
+        (Astrid07221_Allobjctrl.Pelanggan.getData().getId());
     
     public Astrid07221_PelangganGUI(){
         Pelanggan.setSize(720, 600);
@@ -82,7 +82,7 @@ public class Astrid07221_PelangganGUI {
         }else{
             cekverif = "sudah diverifikasi";
         }
-         String text = "Npm = "+Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(cek).getPelanggan().getId()+"\n"
+         String text = "Id = "+Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(cek).getPelanggan().getId()+"\n"
                 +"Nama = "+Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(cek).getPelanggan().getnama()+"\n"
                 +"Alamat = "+Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(cek).getPelanggan().getalamat()+"\n"
                 +"No Identitas = "+Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(cek).getPelanggan().getnoIdentitas()+"\n"

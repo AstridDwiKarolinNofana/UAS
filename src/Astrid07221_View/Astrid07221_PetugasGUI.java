@@ -70,7 +70,7 @@ public class Astrid07221_PetugasGUI {
             public void actionPerformed(ActionEvent ae){ //untuk verifikasi id, dan nama
                 String id = idtext.getText();
                 String nama = namatext.getText();
-                int index = Astrid07221_AllObjectModel.petugasModel.cekData(id, nama); //dicek
+                int index = Astrid07221_AllObjectModel.daftarPelangganmodel.cekData(id, nama); //dicek
                 Astrid07221_Allobjctrl.admin.updateIsVerified(index, Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(index)
                         .getIndexCamera(),Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(index).getPelanggan());
                 tabelpelanggan.setModel(pelanggan.daftarpel());
