@@ -13,7 +13,7 @@ public class Astrid07221_PetugasGUI {
     JFrame petugas = new JFrame();
     JTable tabelpelanggan = new JTable();
     JScrollPane scrollpetugas = new JScrollPane(tabelpelanggan);
-    JButton back,verif;
+    JButton back,verif,hapus;
     JLabel admin,idlabel,namalabel;
     JTextField idtext,namatext;
      public Astrid07221_PetugasGUI(){
@@ -21,7 +21,7 @@ public class Astrid07221_PetugasGUI {
         petugas.setLayout(null);
         petugas.getContentPane().setBackground(Color.RED);
         
-        admin = new JLabel("Admin");
+        admin = new JLabel("Petugas");
         admin.setBounds(250, 30, 200, 30);
         admin.setFont(new Font("Timer New Roman",Font.BOLD,40));
         petugas.add(admin);
@@ -54,6 +54,11 @@ public class Astrid07221_PetugasGUI {
         back.setBackground(Color.GRAY);
         petugas.add(back);
         
+        hapus = new JButton("Hapus");
+        hapus.setBounds(350, 410, 100, 30);
+        hapus.setBackground(Color.GRAY);
+        petugas.add(hapus);
+        
         petugas.setLocationRelativeTo(null);
         petugas.setVisible(true);
         petugas.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -74,6 +79,17 @@ public class Astrid07221_PetugasGUI {
                 Astrid07221_Allobjctrl.admin.updateIsVerified(index, Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(index)
                         .getIndexCamera(),Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(index).getPelanggan());
                 tabelpelanggan.setModel(pelanggan.daftarpel());
+            }
+        });
+        
+        hapus.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ae){ //untuk verifikasi id, dan nama
+                String id = idtext.getText();
+                String nama = namatext.getText();
+                Astrid07221_Allobjctrl.Pelanggan.deleteDataPelanggan(0);
+                tabelpelanggan.setModel(pelanggan.daftarpel());
+                
             }
         });
         

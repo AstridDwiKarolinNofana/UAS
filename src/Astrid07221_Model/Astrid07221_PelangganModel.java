@@ -13,9 +13,6 @@ public class Astrid07221_PelangganModel implements Astrid07221_ModeIinterfaces {
 public void insert(Astrid07221_PelangganEntity pelangganEntity){ //menambah data pelanggan
     pelangganEntityArrayList.add(pelangganEntity);  
 }
-public void hapusPelangganModel(int index) { //hapus data pelanggan 
-        pelangganEntityArrayList.remove(pelangganEntityArrayList.get(index));
-    }
  public int size() {
         return pelangganEntityArrayList.size();
     }

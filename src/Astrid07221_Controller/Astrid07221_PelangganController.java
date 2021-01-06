@@ -50,6 +50,9 @@ public class Astrid07221_PelangganController implements Astrid07221_ControllerIn
     public void deleteDataPelanggan(int index) {
         Astrid07221_AllObjectModel.daftarPelangganmodel.hapusPelangganModel(index);
     }
+    public void deleteDataPelangganGui(String id, String nama) {
+        Astrid07221_AllObjectModel.daftarPelangganmodel.hapusPelangganGui(id, nama);
+    }
     public ArrayList<Astrid07221_DaftarPelangganEntity> cekDaftarPelangganModel() {
         return Astrid07221_AllObjectModel.daftarPelangganmodel.getdaftarpelangganArrayList();
     }
