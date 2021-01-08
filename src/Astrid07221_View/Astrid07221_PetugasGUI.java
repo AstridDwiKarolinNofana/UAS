@@ -17,45 +17,45 @@ public class Astrid07221_PetugasGUI {
     JLabel admin,idlabel,namalabel;
     JTextField idtext,namatext;
      public Astrid07221_PetugasGUI(){
-        petugas.setSize(650,500);
+        petugas.setSize(1500,700);
         petugas.setLayout(null);
-        petugas.getContentPane().setBackground(Color.RED);
+        petugas.getContentPane().setBackground(Color.ORANGE);
         
         admin = new JLabel("Petugas");
-        admin.setBounds(250, 30, 200, 30);
+        admin.setBounds(600, 30, 800, 50);
         admin.setFont(new Font("Timer New Roman",Font.BOLD,40));
         petugas.add(admin);
         
-        scrollpetugas.setBounds(30, 100, 570, 200);
+        scrollpetugas.setBounds(50, 100, 1200, 200);
         tabelpelanggan.setModel(pelanggan.daftarpel());
         petugas.add(scrollpetugas);
         
         idlabel = new JLabel("Id");
-        idlabel.setBounds(50, 320, 100, 30);
+        idlabel.setBounds(450, 320, 100, 30);
         petugas.add(idlabel);
         idtext = new JTextField();
-        idtext.setBounds(50, 350, 100, 30);
+        idtext.setBounds(450, 350, 100, 30);
         petugas.add(idtext);
         
         namalabel = new JLabel("Nama");
-        namalabel.setBounds(200, 320, 100, 30);
+        namalabel.setBounds(600, 320, 100, 30);
         petugas.add(namalabel);
         namatext = new JTextField();
-        namatext.setBounds(200, 350, 100, 30);
+        namatext.setBounds(600, 350, 100, 30);
         petugas.add(namatext);
         
         verif = new JButton("verif");
-        verif.setBounds(350, 350, 100, 30);
+        verif.setBounds(750, 350, 100, 30);
         verif.setBackground(Color.GRAY);
         petugas.add(verif);
         
         back = new JButton("back");
-        back.setBounds(50, 400, 100, 30);
+        back.setBounds(450, 410, 100, 30);
         back.setBackground(Color.GRAY);
         petugas.add(back);
         
         hapus = new JButton("Hapus");
-        hapus.setBounds(350, 410, 100, 30);
+        hapus.setBounds(750, 410, 100, 30);
         hapus.setBackground(Color.GRAY);
         petugas.add(hapus);
         
@@ -76,7 +76,7 @@ public class Astrid07221_PetugasGUI {
                 String id = idtext.getText();
                 String nama = namatext.getText();
                 int index = Astrid07221_AllObjectModel.daftarPelangganmodel.cekData(id, nama); //dicek
-                Astrid07221_Allobjctrl.admin.updateIsVerified(index, Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(index)
+                Astrid07221_Allobjctrl.petugas.updateIsVerified(index, Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(index)
                         .getIndexCamera(),Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(index).getPelanggan());
                 tabelpelanggan.setModel(pelanggan.daftarpel());
             }
@@ -87,9 +87,9 @@ public class Astrid07221_PetugasGUI {
             public void actionPerformed(ActionEvent ae){ //untuk verifikasi id, dan nama
                 String id = idtext.getText();
                 String nama = namatext.getText();
-                Astrid07221_Allobjctrl.Pelanggan.deleteDataPelanggan(0);
+                int index=Astrid07221_AllObjectModel.daftarPelangganmodel.cekData(id, nama);
+                Astrid07221_AllObjectModel.daftarPelangganmodel.hapusPelangganModel(index); //dicek
                 tabelpelanggan.setModel(pelanggan.daftarpel());
-                
             }
         });
         

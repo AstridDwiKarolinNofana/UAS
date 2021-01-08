@@ -1,6 +1,7 @@
 package Astrid07221_Controller;
 import Astrid07221_Entity.Astrid07221_DaftarPelangganEntity;
 import Astrid07221_Entity.Astrid07221_PelangganEntity;
+import Astrid07221_Entity.Astrid07221_CameraEntity;
 import Astrid07221_Model.Astrid07221_PelangganModel;
 import java.util.ArrayList;
 import java.util.Date;
@@ -43,15 +44,11 @@ public class Astrid07221_PelangganController implements Astrid07221_ControllerIn
         int cek = Astrid07221_AllObjectModel.daftarPelangganmodel.cekData(id, null);
         return cek;
     }
-    
     public Astrid07221_DaftarPelangganEntity showDaftarPelanggan(int index) {
         return Astrid07221_AllObjectModel.daftarPelangganmodel.showDaftarPelanggan(index);
     }
     public void deleteDataPelanggan(int index) {
         Astrid07221_AllObjectModel.daftarPelangganmodel.hapusPelangganModel(index);
-    }
-    public void deleteDataPelangganGui(String id, String nama) {
-        Astrid07221_AllObjectModel.daftarPelangganmodel.hapusPelangganGui(id, nama);
     }
     public ArrayList<Astrid07221_DaftarPelangganEntity> cekDaftarPelangganModel() {
         return Astrid07221_AllObjectModel.daftarPelangganmodel.getdaftarpelangganArrayList();
@@ -76,7 +73,7 @@ public class Astrid07221_PelangganController implements Astrid07221_ControllerIn
             data[4] = Astrid07221_AllObjectModel.daftarPelangganmodel.alldatapelanggan().get(i).getPelanggan().getnotelp();
             data[5] = Astrid07221_AllObjectModel.daftarPelangganmodel.alldatapelanggan().get(i).getPelanggan().getTgl_sewa();
             data[6] = Astrid07221_AllObjectModel.daftarPelangganmodel.alldatapelanggan().get(i).getPelanggan().getTgl_kembali();
-            data[7] = Astrid07221_AllObjectModel.daftarPelangganmodel.alldatapelanggan().get(i).getIndexCamera();
+            data[7] = Astrid07221_CameraEntity.merk[Astrid07221_AllObjectModel.daftarPelangganmodel.alldatapelanggan().get(i).getIndexCamera()];
             data[8] = verif;
             dtmdaftarpel.addRow(data);
     }

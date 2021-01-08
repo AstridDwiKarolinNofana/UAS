@@ -32,14 +32,12 @@ public class Astrid07221_DaftarPelangganModel implements Astrid07221_ModeIinterf
             }
         }   return loop;
     }
+ 
     public Astrid07221_DaftarPelangganEntity showDaftarPelanggan(int index){
         return daftarpelangganArrayList.get(index); //menampilkan data pelanggan
     }
     public void hapusPelangganModel(int index) {
         daftarpelangganArrayList.remove(daftarpelangganArrayList.get(index)); //mengapus data pelanggan
-    }
-    public void hapusPelangganGui(String id, String nama) { //hapus data pelanggan 
-        daftarpelangganArrayList.remove(daftarpelangganArrayList);
     }
     public void updateIsVerified(int index,Astrid07221_DaftarPelangganEntity daftarpelanggan){
     daftarpelangganArrayList.set(index, daftarpelanggan); 

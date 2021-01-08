@@ -1,5 +1,6 @@
 package Astrid07221_View;
 import Astrid07221_Entity.Astrid07221_CameraEntity;
+import Astrid07221_Entity.Astrid07221_DaftarPelangganEntity;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -16,19 +17,19 @@ public class Astrid07221_PelangganGUI {
         (Astrid07221_Allobjctrl.Pelanggan.getData().getId());
     
     public Astrid07221_PelangganGUI(){
-        Pelanggan.setSize(720, 600);
+        Pelanggan.setSize(800, 700);
         Pelanggan.setLayout(null);
-        Pelanggan.getContentPane().setBackground(Color.RED);
+        Pelanggan.getContentPane().setBackground(Color.ORANGE);
         
         datadiri = new JLabel("Data Pelanggan");
         datadiri.setFont(new Font("Timer New Roman",Font.BOLD,30));
-        datadiri.setBounds(90, 30, 200, 30);
+        datadiri.setBounds(30, 40, 400, 40);
         Pelanggan.add(datadiri);
         area.setBounds(30, 90, 400, 300);
         Pelanggan.add(area);
         
         daftarcamera = new JLabel("Daftar Camera");
-        daftarcamera.setBounds(450, 30, 250, 30);
+        daftarcamera.setBounds(450, 40, 400, 40);
         daftarcamera.setFont(new Font("Times New Roman",Font.BOLD,30));
         Pelanggan.add(daftarcamera);
         pilcamera.setBounds(450, 90, 230, 30);
@@ -92,6 +93,7 @@ public class Astrid07221_PelangganGUI {
                 +"Verifikasi = "+cekverif+"\n"
                 +"camera = "+Astrid07221_CameraEntity.merk[Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(cek).getIndexCamera()];
         return text;
+     
     }
-    }
+}
     

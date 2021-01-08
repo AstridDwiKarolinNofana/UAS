@@ -17,9 +17,9 @@ public class Astrid07221_GUI {
     
     private boolean ceklogin = false;
     public Astrid07221_GUI(){ //komponen
-        TampilanAwal.setSize(700, 630); //ukuran 
+        TampilanAwal.setSize(700, 700); //ukuran 
         TampilanAwal.setLayout(null);
-        TampilanAwal.getContentPane().setBackground(Color.RED); //warna background
+        TampilanAwal.getContentPane().setBackground(Color.ORANGE); //warna background
         
         top = new JLabel("====RENTAL CAMERA====");
         top.setBounds(50, 10, 600, 50); 
@@ -146,9 +146,9 @@ public class Astrid07221_GUI {
             public void actionPerformed(ActionEvent ae){ //method
                 if(ceklogin==true){
                     try{ 
-                        Astrid07221_Allobjctrl.admin.datapetugas(); // login untuk petugas
-                        Astrid07221_Allobjctrl.admin.login(textidlogin.getText(), textnamalogin.getText());
-                        String nama = Astrid07221_Allobjctrl.admin.Astrid07221_PetugasEntity().getnama(); //memasukkan id,nama, jika benar 
+                        Astrid07221_Allobjctrl.petugas.datapetugas(); // login untuk petugas
+                        Astrid07221_Allobjctrl.petugas.login(textidlogin.getText(), textnamalogin.getText());
+                        String nama = Astrid07221_Allobjctrl.petugas.Astrid07221_PetugasEntity().getnama(); //memasukkan id,nama, jika benar 
                         JOptionPane.showMessageDialog(null, "Selamat datang "+nama,"information", JOptionPane.INFORMATION_MESSAGE);
                         Astrid07221_PetugasGUI petugas = new Astrid07221_PetugasGUI();
                         TampilanAwal.dispose();
