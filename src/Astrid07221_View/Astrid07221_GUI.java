@@ -123,7 +123,7 @@ public class Astrid07221_GUI {
         TampilanAwal.setLocationRelativeTo(null);
         radioPetugas.addActionListener(new ActionListener(){
             @Override
-            public void actionPerformed(ActionEvent ae){ //method aslab
+            public void actionPerformed(ActionEvent ae){ //method 
                 if(radioPetugas.isSelected()){
                     radiopelanggan.setSelected(false);
                     ceklogin=true;
@@ -133,9 +133,9 @@ public class Astrid07221_GUI {
         
         radiopelanggan.addActionListener(new ActionListener(){
             @Override
-            public void actionPerformed(ActionEvent ae){ //untuk praktikan
+            public void actionPerformed(ActionEvent ae){ //untuk 
                 if(radiopelanggan.isSelected()){
-                    radioPetugas.setSelected(false);//untuk aslab false
+                    radioPetugas.setSelected(false);//untuk 
                     ceklogin=false;
                 }
             }

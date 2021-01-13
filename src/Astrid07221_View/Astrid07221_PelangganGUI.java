@@ -48,7 +48,7 @@ public class Astrid07221_PelangganGUI {
         Pelanggan.setVisible(true);
         Pelanggan.setLocationRelativeTo(null);
         Pelanggan.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        if(cek==-1){ //cek data, apabila kita belum daftar praktkum
+        if(cek==-1){ //cek data, apabila kita belum daftar camera
             JOptionPane.showMessageDialog(null, "Anda Belum Daftar Camera", "Information", JOptionPane.INFORMATION_MESSAGE);        
         }else if(cek==-2){
             JOptionPane.showMessageDialog(null,"Anda Belum Daftar Camera", "Information", JOptionPane.INFORMATION_MESSAGE);
