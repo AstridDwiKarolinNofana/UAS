@@ -73,7 +73,8 @@ public class Astrid07221_PelangganController implements Astrid07221_ControllerIn
             data[4] = Astrid07221_AllObjectModel.daftarPelangganmodel.alldatapelanggan().get(i).getPelanggan().getnotelp();
             data[5] = Astrid07221_AllObjectModel.daftarPelangganmodel.alldatapelanggan().get(i).getPelanggan().getTgl_sewa();
             data[6] = Astrid07221_AllObjectModel.daftarPelangganmodel.alldatapelanggan().get(i).getPelanggan().getTgl_kembali();
-            data[7] = Astrid07221_CameraEntity.merk[Astrid07221_AllObjectModel.daftarPelangganmodel.alldatapelanggan().get(i).getIndexCamera()];
+            data[7] = Astrid07221_CameraEntity.merk[Astrid07221_AllObjectModel.daftarPelangganmodel.alldatapelanggan().
+                      get(i).getIndexCamera()];
             data[8] = verif;
             dtmdaftarpel.addRow(data);
     }

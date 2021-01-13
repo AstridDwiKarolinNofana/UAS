@@ -55,7 +55,7 @@ public class Astrid07221_GUI {
         textnamalogin.setBounds(30, 270, 200, 30);
         TampilanAwal.add(textnamalogin);
         
-        check = new JButton("check");
+        check = new JButton("Login");
         check.setBounds(90, 320, 100, 40);
         check.setBackground(Color.GRAY);
         TampilanAwal.add(check);

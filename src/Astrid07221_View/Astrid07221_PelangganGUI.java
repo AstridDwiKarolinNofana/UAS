@@ -88,12 +88,15 @@ public class Astrid07221_PelangganGUI {
                 +"Alamat = "+Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(cek).getPelanggan().getalamat()+"\n"
                 +"No Identitas = "+Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(cek).getPelanggan().getnoIdentitas()+"\n"
                 +"No Telp = "+Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(cek).getPelanggan().getnotelp()+"\n"
-                +"Tanggal Sewa = "+new SimpleDateFormat("dd-MM-yyyy").format(Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(cek).getPelanggan().getTgl_sewa())+"\n"
-                +"Tanggal Kembali = "+new SimpleDateFormat("dd-MM-yyyy").format(Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(cek).getPelanggan().getTgl_kembali())+"\n"
+                +"Tanggal Sewa = "+new SimpleDateFormat("dd-MM-yyyy").format(Astrid07221_Allobjctrl.Pelanggan.
+                        showDaftarPelanggan(cek).getPelanggan().getTgl_sewa())+"\n"
+                +"Tanggal Kembali = "+new SimpleDateFormat("dd-MM-yyyy").format(Astrid07221_Allobjctrl.Pelanggan.
+                        showDaftarPelanggan(cek).getPelanggan().getTgl_kembali())+"\n"
                 +"Verifikasi = "+cekverif+"\n"
-                +"camera = "+Astrid07221_CameraEntity.merk[Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(cek).getIndexCamera()];
+                +"camera = "+Astrid07221_CameraEntity.merk[Astrid07221_Allobjctrl.Pelanggan.
+                        showDaftarPelanggan(cek).getIndexCamera()];
         return text;
      
+        }
     }
-}
     

@@ -104,7 +104,7 @@ public class Astrid07221_main {
                 System.out.println("Daftar Sukses !!");
         }
         
-        static void registerPelanggan() {
+        void registerPelanggan() {
         System.out.println("Pilih Camera : ");
         for (int i = 0; i < Astrid07221_CameraEntity.merk.length; i++) {
             System.out.println((i) + " " + Astrid07221_CameraEntity.merk[i]);
