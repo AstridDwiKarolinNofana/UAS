@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
 import javax.swing.*;
-public class Astrid07221_GUI extends Astrid07221_Komonen{
+public class Astrid07221_GUI extends Astrid07221_Komponen{
     private boolean ceklogin = false;
     public Astrid07221_GUI(){ //komponen
         setSize(700, 700); //ukuran 

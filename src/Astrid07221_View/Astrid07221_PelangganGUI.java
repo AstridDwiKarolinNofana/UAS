@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import javax.swing.*;
-public class Astrid07221_PelangganGUI extends Astrid07221_Komonen{
+public class Astrid07221_PelangganGUI extends Astrid07221_Komponen{
     int cek = Astrid07221_Allobjctrl.Pelanggan.cekDaftarPelanggan
         (Astrid07221_Allobjctrl.Pelanggan.getData().getId());
     

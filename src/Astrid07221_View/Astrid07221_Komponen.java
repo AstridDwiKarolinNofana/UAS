@@ -2,7 +2,7 @@ package Astrid07221_View;
 import Astrid07221_Entity.Astrid07221_CameraEntity;
 import java.awt.Font;
 import javax.swing.*;
-public class Astrid07221_Komonen extends JFrame{
+public class Astrid07221_Komponen extends JFrame{
     JFrame GUI = new JFrame();
     JFrame petugas = new JFrame();
     JFrame pelanggan = new JFrame();

@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.*;
-public class Astrid07221_PetugasGUI extends Astrid07221_Komonen{
+public class Astrid07221_PetugasGUI extends Astrid07221_Komponen{
      public Astrid07221_PetugasGUI(){
         setSize(1500,700);
         setLayout(null);
