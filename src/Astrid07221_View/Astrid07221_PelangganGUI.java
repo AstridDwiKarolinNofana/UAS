@@ -7,47 +7,39 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import javax.swing.*;
-public class Astrid07221_PelangganGUI {
-    JFrame Pelanggan = new JFrame();
-    JButton back,daftarbtn;
-    JTextArea area = new JTextArea();
-    JLabel datadiri,daftarcamera;
-    JComboBox pilcamera = new JComboBox(Astrid07221_CameraEntity.merk);
+public class Astrid07221_PelangganGUI extends Astrid07221_Komonen{
     int cek = Astrid07221_Allobjctrl.Pelanggan.cekDaftarPelanggan
         (Astrid07221_Allobjctrl.Pelanggan.getData().getId());
     
     public Astrid07221_PelangganGUI(){
-        Pelanggan.setSize(800, 700);
-        Pelanggan.setLayout(null);
-        Pelanggan.getContentPane().setBackground(Color.ORANGE);
+        setSize(800, 700);
+        setLayout(null);
+         setVisible(true);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        getContentPane().setBackground(Color.ORANGE);
         
-        datadiri = new JLabel("Data Pelanggan");
-        datadiri.setFont(new Font("Timer New Roman",Font.BOLD,30));
+        datadiri.setFont(font);
         datadiri.setBounds(30, 40, 400, 40);
-        Pelanggan.add(datadiri);
+        add(datadiri);
         area.setBounds(30, 90, 400, 300);
-        Pelanggan.add(area);
+        add(area);
         
-        daftarcamera = new JLabel("Daftar Camera");
         daftarcamera.setBounds(450, 40, 400, 40);
-        daftarcamera.setFont(new Font("Times New Roman",Font.BOLD,30));
-        Pelanggan.add(daftarcamera);
+        daftarcamera.setFont(font);
+        add(daftarcamera);
         pilcamera.setBounds(450, 90, 230, 30);
-        Pelanggan.add(pilcamera);
+        add(pilcamera);
         
-        daftarbtn = new JButton("Daftar");
         daftarbtn.setBounds(500, 200, 100, 30);
         daftarbtn.setBackground(Color.GRAY);
-        Pelanggan.add(daftarbtn);
+        add(daftarbtn);
         
-        back = new JButton("Back");
         back.setBounds(30, 500, 100, 30);
         back.setBackground(Color.GRAY);
-        Pelanggan.add(back);
+        add(back);
         
-        Pelanggan.setVisible(true);
-        Pelanggan.setLocationRelativeTo(null);
-        Pelanggan.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       
         if(cek==-1){ //cek data, apabila kita belum daftar camera
             JOptionPane.showMessageDialog(null, "Anda Belum Daftar Camera", "Information", JOptionPane.INFORMATION_MESSAGE);        
         }else if(cek==-2){
@@ -68,7 +60,7 @@ public class Astrid07221_PelangganGUI {
         back.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae){
-                Pelanggan.dispose();
+                dispose();
                 Astrid07221_GUI men = new Astrid07221_GUI(); //nama objek menu
             }
         });
