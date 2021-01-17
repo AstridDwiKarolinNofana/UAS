@@ -7,6 +7,7 @@ public class Astrid07221_Komponen extends JFrame{
     JFrame petugas = new JFrame();
     JFrame pelanggan = new JFrame();
     Font font = new Font("Times New Roman",Font.BOLD,30);
+
     
     JLabel judulGui = new JLabel("====RENTAL CAMERA====");
     JLabel labellogin = new JLabel("login");
@@ -52,6 +53,7 @@ public class Astrid07221_Komponen extends JFrame{
     JTextField namatext = new JTextField();
     JButton verif = new JButton("verif");
     JButton hapus = new JButton("Hapus");
+    
     
     
     

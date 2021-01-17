@@ -1,9 +1,8 @@
 package Astrid07221_View;
-import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
+import java.awt.Color;
 import javax.swing.*;
 public class Astrid07221_GUI extends Astrid07221_Komponen{
     private boolean ceklogin = false;
