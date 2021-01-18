@@ -7,7 +7,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import javax.swing.*;
-public class Astrid07221_PelangganGUI extends Astrid07221_Komponen{
+public class Astrid07221_PelangganGUI extends JFrame{
+    JLabel datadiri = new JLabel("Data Pelanggan");
+    JTextArea area = new JTextArea();
+    JLabel daftarcamera = new JLabel("Daftar Camera");
+    JComboBox pilcamera = new JComboBox(Astrid07221_CameraEntity.merk);
+    JButton daftarbtn = new JButton("Daftar");
+    JButton back = new JButton("Back");
+    Font font = new Font("Times New Roman",Font.BOLD,30);
     int cek = Astrid07221_Allobjctrl.Pelanggan.cekDaftarPelanggan
         (Astrid07221_Allobjctrl.Pelanggan.getData().getId());
     

@@ -3,9 +3,37 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.*;
-public class Astrid07221_GUI extends Astrid07221_Komponen{
+public class Astrid07221_GUI extends JFrame{
+    JLabel judulGui = new JLabel("====RENTAL CAMERA====");
+    JLabel labellogin = new JLabel("login");
+    JRadioButton radioPetugas = new JRadioButton("petugas");
+    JRadioButton radiopelanggan = new JRadioButton("pelanggan");
+    JLabel labelidlogin = new JLabel("id");
+    JLabel labelnamalogin = new JLabel("Nama");
+    JLabel labeliddaftar = new JLabel("id");
+    JLabel labelnamadaftar = new JLabel("Nama");
+    JLabel labelalamat = new JLabel("Alamat");
+    JLabel labelnoidentitas = new JLabel("No Identitas");
+    JLabel labelnotelp = new JLabel("No Telepon");
+    JLabel labeltglsewa = new JLabel("Tanggal sewa (dd/mm/yyyy");
+    JLabel labeltglkembali = new JLabel("Tanggal kembali (dd/mm/yyyy");
+    JButton btnlogin = new JButton("Login");
+    JButton reg = new JButton("Daftar");
+    JLabel daftar = new JLabel("Daftar");
+    JTextField textidlogin = new JTextField();
+    JTextField textnamalogin = new JTextField();
+    JTextField textiddaftar = new JTextField();
+    JTextField textnamadaftar = new JTextField();
+    JTextField textalamat = new JTextField();
+    JTextField textnoidentitas = new JTextField();
+    JTextField textnotelp = new JTextField();
+    JTextField texttglsewa = new JTextField();
+    JTextField texttglkembali = new JTextField();
+    Font font = new Font("Times New Roman",Font.BOLD,30);
     private boolean ceklogin = false;
+    
     public Astrid07221_GUI(){ //komponen
         setSize(700, 700); //ukuran 
         setLayout(null);

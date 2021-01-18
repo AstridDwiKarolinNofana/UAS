@@ -7,7 +7,18 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.*;
-public class Astrid07221_PetugasGUI extends Astrid07221_Komponen{
+public class Astrid07221_PetugasGUI extends JFrame{
+    JLabel admin = new JLabel("Petugas");
+    JTable tabelpelanggan = new JTable();
+    JScrollPane scrollpetugas = new JScrollPane(tabelpelanggan);
+    JLabel idlabel = new JLabel("Id");
+    JLabel namalabel = new JLabel("Nama");
+    JTextField idtext = new JTextField();
+    JTextField namatext = new JTextField();
+    JButton verif = new JButton("verif");
+    JButton hapus = new JButton("Hapus");  
+    JButton back = new JButton("Back");
+    Font font = new Font("Times New Roman",Font.BOLD,30);
      public Astrid07221_PetugasGUI(){
         setSize(1500,700);
         setLayout(null);
