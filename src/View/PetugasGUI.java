@@ -1,5 +1,5 @@
-package Astrid07221_View;
-import Astrid07221_Controller.Astrid07221_AllObjectModel;
+package View;
+import Controller.AllObjectModel;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.*;
-public class Astrid07221_PetugasGUI extends JFrame{
+public class PetugasGUI extends JFrame{
     JLabel admin = new JLabel("Petugas");
     JTable tabelpelanggan = new JTable();
     JScrollPane scrollpetugas = new JScrollPane(tabelpelanggan);
@@ -19,7 +19,7 @@ public class Astrid07221_PetugasGUI extends JFrame{
     JButton hapus = new JButton("Hapus");  
     JButton back = new JButton("Back");
     Font font = new Font("Times New Roman",Font.BOLD,30);
-     public Astrid07221_PetugasGUI(){
+     public PetugasGUI(){
         setSize(1500,700);
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -32,7 +32,7 @@ public class Astrid07221_PetugasGUI extends JFrame{
         add(admin);
         
         scrollpetugas.setBounds(50, 100, 1200, 200);
-        tabelpelanggan.setModel(Astrid07221_Allobjctrl.Pelanggan.daftarpel());
+        tabelpelanggan.setModel(Allobjctrl.Pelanggan.daftarpel());
         add(scrollpetugas);
         
         idlabel.setBounds(450, 320, 100, 30);
@@ -61,7 +61,7 @@ public class Astrid07221_PetugasGUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent ae){
                 dispose();
-                Astrid07221_GUI men = new Astrid07221_GUI();//nama objek men
+                GUI men = new GUI();//nama objek men
             }
         });
         
@@ -70,10 +70,10 @@ public class Astrid07221_PetugasGUI extends JFrame{
             public void actionPerformed(ActionEvent ae){ //untuk verifikasi id, dan nama
                 String id = idtext.getText();
                 String nama = namatext.getText();
-                int index = Astrid07221_AllObjectModel.daftarPelangganmodel.cekData(id, nama); //dicek
-                Astrid07221_Allobjctrl.petugas.updateIsVerified(index, Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(index)
-                        .getIndexCamera(),Astrid07221_Allobjctrl.Pelanggan.showDaftarPelanggan(index).getPelanggan());
-                tabelpelanggan.setModel(Astrid07221_Allobjctrl.Pelanggan.daftarpel());
+                int index = AllObjectModel.daftarPelangganmodel.cekData(id, nama); //dicek
+                Allobjctrl.petugas.updateIsVerified(index, Allobjctrl.Pelanggan.showDaftarPelanggan(index)
+                        .getIndexCamera(),Allobjctrl.Pelanggan.showDaftarPelanggan(index).getPelanggan());
+                tabelpelanggan.setModel(Allobjctrl.Pelanggan.daftarpel());
             }
         });
         
@@ -82,9 +82,9 @@ public class Astrid07221_PetugasGUI extends JFrame{
             public void actionPerformed(ActionEvent ae){ //untuk verifikasi id, dan nama
                 String id = idtext.getText();
                 String nama = namatext.getText();
-                int index=Astrid07221_AllObjectModel.daftarPelangganmodel.cekData(id, nama);
-                Astrid07221_AllObjectModel.daftarPelangganmodel.hapusPelangganModel(index); //dicek
-                tabelpelanggan.setModel(Astrid07221_Allobjctrl.Pelanggan.daftarpel());
+                int index=AllObjectModel.daftarPelangganmodel.cekData(id, nama);
+                AllObjectModel.daftarPelangganmodel.hapusPelangganModel(index); //dicek
+                tabelpelanggan.setModel(Allobjctrl.Pelanggan.daftarpel());
             }
         });
         
@@ -92,8 +92,8 @@ public class Astrid07221_PetugasGUI extends JFrame{
             @Override
             public void mouseClicked(MouseEvent e){  //method
                 int i = tabelpelanggan.getSelectedRow();
-                idtext.setText(Astrid07221_Allobjctrl.Pelanggan.daftarpel().getValueAt(i, 0).toString());
-                namatext.setText(Astrid07221_Allobjctrl.Pelanggan.daftarpel().getValueAt(i, 1).toString());
+                idtext.setText(Allobjctrl.Pelanggan.daftarpel().getValueAt(i, 0).toString());
+                namatext.setText(Allobjctrl.Pelanggan.daftarpel().getValueAt(i, 1).toString());
             }
         });
      }

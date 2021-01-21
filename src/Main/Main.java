@@ -1,22 +1,22 @@
-package Astrid07221_Main;
-import Astrid07221_Entity.Astrid07221_CameraEntity;
-import Astrid07221_Entity.Astrid07221_DaftarPelangganEntity;
-import Astrid07221_Model.Astrid07221_DaftarPelangganModel;
-import Astrid07221_Controller.Astrid07221_PetugasController;
-import Astrid07221_Controller.Astrid07221_AllObjectModel;
-import Astrid07221_Controller.Astrid07221_PelangganController;
+package Main;
+import Entity.CameraEntity;
+import Entity.DaftarPelangganEntity;
+import Model.DaftarPelangganModel;
+import Controller.PetugasController;
+import Controller.AllObjectModel;
+import Controller.PelangganController;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner; 
-import Astrid07221_View.Astrid07221_GUI;
+import View.GUI;
 
-public class Astrid07221_main {
-    private static Astrid07221_PetugasController petugasModel = new Astrid07221_PetugasController(); 
-    private static Astrid07221_PelangganController pelangganModel = new Astrid07221_PelangganController();
+public class Main {
+    private static PetugasController petugasModel = new PetugasController(); 
+    private static PelangganController pelangganModel = new PelangganController();
     private static Scanner input = new Scanner (System.in);
 
     public static void main(String[] args){ 
-        Astrid07221_main data = new Astrid07221_main();
+        Main data = new Main();
         data.view(); 
     }
     void view(){
@@ -42,7 +42,7 @@ public class Astrid07221_main {
     }
     
     void GUI(){
-        Astrid07221_GUI gui = new Astrid07221_GUI();
+        GUI gui = new GUI();
     }
     
     void viewMenu(){
@@ -106,8 +106,8 @@ public class Astrid07221_main {
         
         void registerPelanggan() {
         System.out.println("Pilih Camera : ");
-        for (int i = 0; i < Astrid07221_CameraEntity.merk.length; i++) {
-            System.out.println((i) + " " + Astrid07221_CameraEntity.merk[i]);
+        for (int i = 0; i < CameraEntity.merk.length; i++) {
+            System.out.println((i) + " " + CameraEntity.merk[i]);
         }
         int pilPrak = input.nextInt();
         pelangganModel.Astrid07221_DaftarCamera(pilPrak, pelangganModel.getData(), false);
@@ -116,13 +116,13 @@ public class Astrid07221_main {
         
         void viewDataPelanggan() {
         int i=0;
-        for (Astrid07221_DaftarPelangganEntity pelanggan : pelangganModel.cekDaftarPelangganModel()) {
+        for (DaftarPelangganEntity pelanggan : pelangganModel.cekDaftarPelangganModel()) {
                 System.out.println("Data Ke - : "+i);
                 System.out.println("Id : " + pelangganModel.showDaftarPelanggan(i).getPelanggan().getId());
                 System.out.println("Nama = "+pelangganModel.showDaftarPelanggan(i).getPelanggan().getnama());
                 System.out.println("No identitas = "+pelangganModel.showDaftarPelanggan(i).getPelanggan().getnoIdentitas());
                 System.out.println("No telp = "+pelangganModel.showDaftarPelanggan(i).getPelanggan().getnotelp());
-                System.out.println("camera = "+Astrid07221_CameraEntity.merk[pelangganModel.showDaftarPelanggan(i).getIndexCamera()]);
+                System.out.println("camera = "+CameraEntity.merk[pelangganModel.showDaftarPelanggan(i).getIndexCamera()]);
                 System.out.println("Tgl sewa           : "+new SimpleDateFormat(" dd - MM - yyyy").format(pelangganModel.showDaftarPelanggan(i).getPelanggan().getTgl_sewa()));
                 System.out.println("Tgl kembali           : "+new SimpleDateFormat(" dd - MM - yyyy").format(pelangganModel.showDaftarPelanggan(i).getPelanggan().getTgl_kembali()));
                 System.out.println("isVerified = ");
@@ -157,7 +157,7 @@ public class Astrid07221_main {
         System.out.println("id = "+pelangganModel.showDaftarPelanggan(cekpelanggan).getPelanggan().getId());
         System.out.println("No identitas = "+pelangganModel.showDaftarPelanggan(cekpelanggan).getPelanggan().getnoIdentitas());
         System.out.println("No telp = "+pelangganModel.showDaftarPelanggan(cekpelanggan).getPelanggan().getnotelp());
-        System.out.println("camera = "+Astrid07221_CameraEntity.merk[pelangganModel.showDaftarPelanggan(cekpelanggan).getIndexCamera()]);
+        System.out.println("camera = "+CameraEntity.merk[pelangganModel.showDaftarPelanggan(cekpelanggan).getIndexCamera()]);
         System.out.println("Tgl sewa           : "+new SimpleDateFormat(" dd - MM - yyyy").format(pelangganModel.showDaftarPelanggan(cekpelanggan).getPelanggan().getTgl_sewa()));
         System.out.println("Tgl kembali           : "+new SimpleDateFormat(" dd - MM - yyyy").format(pelangganModel.showDaftarPelanggan(cekpelanggan).getPelanggan().getTgl_kembali()));
         System.out.println("isVerified = ");
@@ -196,7 +196,7 @@ public class Astrid07221_main {
         System.out.println("id Pelanggan : ");
         String id = input.next();
         System.out.println("=======================");
-        int index = Astrid07221_AllObjectModel.daftarPelangganmodel.cekData(id, null);
+        int index = AllObjectModel.daftarPelangganmodel.cekData(id, null);
         petugasModel.updateIsVerified(index, pelangganModel.showDaftarPelanggan(index).getIndexCamera(),pelangganModel.showDaftarPelanggan(index).getPelanggan());
     }
         

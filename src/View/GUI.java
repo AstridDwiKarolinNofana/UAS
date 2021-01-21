@@ -1,11 +1,11 @@
-package Astrid07221_View;
+package View;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.*;
-public class Astrid07221_GUI extends JFrame{
+public class GUI extends JFrame{
     JLabel judulGui = new JLabel("====RENTAL CAMERA====");
     JLabel labellogin = new JLabel("login");
     JRadioButton radioPetugas = new JRadioButton("petugas");
@@ -34,7 +34,7 @@ public class Astrid07221_GUI extends JFrame{
     Font font = new Font("Times New Roman",Font.BOLD,30);
     private boolean ceklogin = false;
     
-    public Astrid07221_GUI(){ //komponen
+    public GUI(){ //komponen
         setSize(700, 700); //ukuran 
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -140,23 +140,23 @@ public class Astrid07221_GUI extends JFrame{
             public void actionPerformed(ActionEvent ae){ //method
                 if(ceklogin==true){
                     try{ 
-                        Astrid07221_Allobjctrl.petugas.datapetugas(); // login untuk petugas
-                        Astrid07221_Allobjctrl.petugas.login(textidlogin.getText(), textnamalogin.getText());
-                        String nama = Astrid07221_Allobjctrl.petugas.Astrid07221_PetugasEntity().getnama(); //memasukkan id,nama, jika benar 
+                        Allobjctrl.petugas.datapetugas(); // login untuk petugas
+                        Allobjctrl.petugas.login(textidlogin.getText(), textnamalogin.getText());
+                        String nama = Allobjctrl.petugas.Astrid07221_PetugasEntity().getnama(); //memasukkan id,nama, jika benar 
                         JOptionPane.showMessageDialog(null, "Selamat datang "+nama,"information", JOptionPane.INFORMATION_MESSAGE);
                         dispose();
-                        Astrid07221_PetugasGUI petugas = new Astrid07221_PetugasGUI();
+                        PetugasGUI petugas = new PetugasGUI();
                     }catch(Exception exception){ //jika id/nama salah makan akan muncul pesan
                         JOptionPane.showMessageDialog(null, "id atau nama salah", "information", JOptionPane.INFORMATION_MESSAGE);
                     }
                         kosong();//method kosong, jika datanya kosong
                 }else{
                     try{ //login untuk pelanggan
-                       Astrid07221_Allobjctrl.Pelanggan.login(textidlogin.getText(),textnamalogin.getText());
-                       String nama = Astrid07221_Allobjctrl.Pelanggan.getData().getnama(); //memasukkan id,nama, jika benar 
+                       Allobjctrl.Pelanggan.login(textidlogin.getText(),textnamalogin.getText());
+                       String nama = Allobjctrl.Pelanggan.getData().getnama(); //memasukkan id,nama, jika benar 
                        JOptionPane.showMessageDialog(null, "Selamat datang "+nama,"information", JOptionPane.INFORMATION_MESSAGE);
                        dispose();
-                       Astrid07221_PelangganGUI  pelanggan = new Astrid07221_PelangganGUI();
+                       PelangganGUI  pelanggan = new PelangganGUI();
                     }catch(Exception eception){ //jika id/nama salah makan akan muncul pesan
                         JOptionPane.showMessageDialog(null, "id atau nama salah", "information", JOptionPane.INFORMATION_MESSAGE);
                        kosong(); //method kosong, jika datanya kosong
@@ -176,7 +176,7 @@ public class Astrid07221_GUI extends JFrame{
                     String notelp = textnotelp.getText();
                     Date tglsewa = new Date(texttglsewa.getText());
                     Date tglkembali = new Date(texttglkembali.getText());
-                    Astrid07221_Allobjctrl.Pelanggan.insert(id, nama, alamat, noidentitas, notelp, tglsewa, tglkembali); //jika sukses
+                    Allobjctrl.Pelanggan.insert(id, nama, alamat, noidentitas, notelp, tglsewa, tglkembali); //jika sukses
                     JOptionPane.showMessageDialog(null, "Registrasi sukses", "information", JOptionPane.INFORMATION_MESSAGE);
                     kosong();
                 }catch(Exception exception){

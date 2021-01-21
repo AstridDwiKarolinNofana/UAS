@@ -1,15 +1,15 @@
-package Astrid07221_Entity;
-public class Astrid07221_DaftarPelangganEntity {
-   private Astrid07221_PelangganEntity pelanggan; 
+package Entity;
+public class DaftarPelangganEntity {
+   private PelangganEntity pelanggan; 
     private boolean isVerified;
     private int indexCamera; 
-     public Astrid07221_DaftarPelangganEntity(int indexCamera,
-             Astrid07221_PelangganEntity pelanggan, boolean isVerified) { 
+     public DaftarPelangganEntity(int indexCamera,
+             PelangganEntity pelanggan, boolean isVerified) { 
          this.indexCamera = indexCamera;
         this.pelanggan = pelanggan;
         this.isVerified = isVerified;
     }
-    public Astrid07221_PelangganEntity getPelanggan() {
+    public PelangganEntity getPelanggan() {
         return pelanggan;
     }
     public boolean isIsVerified() {
@@ -18,7 +18,7 @@ public class Astrid07221_DaftarPelangganEntity {
     public int getIndexCamera() {
         return indexCamera;
     }
-    public void setPelanggan(Astrid07221_PelangganEntity pelanggan) {
+    public void setPelanggan(PelangganEntity pelanggan) {
         this.pelanggan = pelanggan;
     }
     public void setIsVerified(boolean isVerified) {

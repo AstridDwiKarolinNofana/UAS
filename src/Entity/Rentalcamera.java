@@ -1,10 +1,10 @@
-package Astrid07221_Entity;
+package Entity;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-public class Astrid07221_Rentalcamera {
+public class Rentalcamera {
 protected String id,nama,alamat,noIdentitas,notelp;
     
-public Astrid07221_Rentalcamera(String id,String nama,
+public Rentalcamera(String id,String nama,
     String alamat, String noIdentitas,String notelp){
     this.id=id;
     this.nama=nama;
@@ -12,7 +12,7 @@ public Astrid07221_Rentalcamera(String id,String nama,
     this.noIdentitas=noIdentitas;
     this.notelp=notelp;
 }
-    public Astrid07221_Rentalcamera(){
+    public Rentalcamera(){
     } 
     
     public String getId() {

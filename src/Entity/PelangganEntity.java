@@ -1,15 +1,15 @@
-package Astrid07221_Entity;
+package Entity;
 import java.util.Date;
-public class Astrid07221_PelangganEntity  extends Astrid07221_Rentalcamera{ 
+public class PelangganEntity  extends Rentalcamera{ 
     protected Date tgl_sewa,tgl_kembali; 
     
-    public Astrid07221_PelangganEntity(String id,String nama,
+    public PelangganEntity(String id,String nama,
     String alamat, String noIdentitas,String notelp,Date tgl_sewa,Date tgl_kembali){
         super(id,nama,alamat,noIdentitas,notelp); 
         this.tgl_sewa=tgl_sewa;
         this.tgl_kembali=tgl_kembali;
     }
-    public Astrid07221_PelangganEntity(){
+    public PelangganEntity(){
     }    
 
    @Override 
